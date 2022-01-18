@@ -11,6 +11,7 @@ $ yarn add myws
 # npm
 $ npm i myws
 ```
+
 # Usage
 
 ## Vue
@@ -19,7 +20,7 @@ $ npm i myws
 
 为了规范化，请在你的项目中创建 `src/service/ws.js` 文件，该文件中用于存放该项目的 `WebSocket` 服务逻辑。
 
-``` js
+```js
 // src/service/ws.js
 
 import Vue from 'vue'
@@ -39,6 +40,11 @@ Vue.use(wsInstaller, {
 
   // ws 心跳间隔，毫秒数，默认 50000。
   heart_interval,
+
+  /**
+   * ws 重连间隔，毫秒数，默认 3000。
+   */
+  reconnect_interval: 3000,
 
   // 自动重连次数限制, Number, 默认 30。
   reconnect_limit: 30,
@@ -79,7 +85,7 @@ Vue.use(wsInstaller, {
 
 然后在 `main.js` 中导入 `src/service/ws.js`。
 
-``` js
+```js
 // main.js
 import '@/service/ws'
 
@@ -88,18 +94,18 @@ import '@/service/ws'
 
 这样，`WebSocket` 就会正常注册，并且在所有 `vue` 组件实例中你都可以接收到来自 `WebSocket` 服务发送的消息，像这样：
 
-``` html
+```html
 <script>
-export default {
-  mounted() {
-    const { WsBus, WS } = this.$ws
-    // 当前 WebSocket 实例
-    console.log(WS)
-    WsBus.$on('ws_message', (data) => {
-      // 请保证后端发送的是 JSON 格式的数据，因为我们会在方法内部通过 `JSON.parse` 方法解析它。
-      console.log(data)
-    })
+  export default {
+    mounted() {
+      const { WsBus, WS } = this.$ws
+      // 当前 WebSocket 实例
+      console.log(WS)
+      WsBus.$on('ws_message', (data) => {
+        // 请保证后端发送的是 JSON 格式的数据，因为我们会在方法内部通过 `JSON.parse` 方法解析它。
+        console.log(data)
+      })
+    },
   }
-}
 </script>
 ```

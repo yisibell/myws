@@ -25,6 +25,11 @@ interface Options {
   heart_interval?: number
 
   /**
+   * ws 重连间隔，毫秒数，默认 3000。
+   */
+  reconnect_interval?: number
+
+  /**
    * 自动重连次数限制, 默认 30。
    */
   reconnect_limit?: number

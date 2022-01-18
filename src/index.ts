@@ -10,9 +10,6 @@ export let WS_CONNECT_COUNT = 0
 // ws 重连事件名
 const WS_RECONNECT_EMIT_NAME = 'ws_reconnect'
 
-// ws 重连触发间隔
-const WS_RECONNECT_INTERVAL = 3000
-
 // 重连发布
 const emitWsReconnect = (WsBus: WsBusEmitter, data: any) => {
   return WsBus.emit(WS_RECONNECT_EMIT_NAME, data)
@@ -126,7 +123,7 @@ const install = (Vue: VueConstructor, options: Options = {}) => {
 
       console.log(msg)
       install(Vue, options)
-    }, WS_RECONNECT_INTERVAL)
+    }, options.reconnect_interval || 3000)
   })
 }
 
