@@ -1,0 +1,49 @@
+{
+  "name": "myws",
+  "version": "1.0.0",
+  "description": "A tiny websocket client library.",
+  "main": "dist/myws.cjs.js",
+  "module": "dist/myws.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "build": "rollup -c",
+    "release": "npm publish --access=public"
+  },
+  "keywords": [
+    "vue",
+    "websocket",
+    "websocket-client",
+    "mitt"
+  ],
+  "author": {
+    "name": "elenh",
+    "email": "yisiwings@163.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yisibell/myws.git"
+  },
+  "homepage": "https://github.com/yisibell/myws",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "rollup": "^2.48.0",
+    "rollup-plugin-dts": "^3.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4",
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vuex": "^3.6.2"
+  },
+  "engines": {
+    "node": ">= 12.x"
+  },
+  "dependencies": {
+    "mitt": "^3.0.0"
+  }
+}
