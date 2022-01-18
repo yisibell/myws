@@ -58,7 +58,7 @@ Vue.use(wsInstaller, {
   // 自定义 ws 响应事件名。
   vue_emit_name: {
     onopen: 'ws_open',
-    onmessage: 'ws_message', // WsBus.$on('ws_message')
+    onmessage: 'ws_message', // WsBus.on('ws_message')
     onerror: 'ws_error',
     onclose: 'ws_close'
   },
@@ -101,7 +101,7 @@ import '@/service/ws'
       const { WsBus, WS } = this.$ws
       // 当前 WebSocket 实例
       console.log(WS)
-      WsBus.$on('ws_message', (data) => {
+      WsBus.on('ws_message', (data) => {
         // 请保证后端发送的是 JSON 格式的数据，因为我们会在方法内部通过 `JSON.parse` 方法解析它。
         console.log(data)
       })
