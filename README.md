@@ -23,14 +23,14 @@ $ npm i myws
 // src/service/ws.js
 
 import Vue from 'vue'
-import ws from 'myws' // WebSocket 服务
+import { wsInstaller } from 'myws' // WebSocket 服务
 
 // 一些常量可以放在环境变量中
 const open = process.env.VUE_APP_WS_OPEN
 const api = process.env.VUE_APP_WS_API
 const heart_interval = process.env.VUE_APP_WS_INTERVAL
 
-Vue.use(ws, {
+Vue.use(wsInstaller, {
   // 是否开启 ws，默认关闭。
   open,
 
@@ -49,8 +49,7 @@ Vue.use(ws, {
   // 每次尝试重连 ws 时的提示文本, 也可以是一个函数，该函数会被传入当前的重连计数。
   reconnect_msg: '',
 
-  // 在响应 ws 消息时，向 vue 实例注入的 $emit 事件名，
-  // 一旦修改，则 4 个名称都需要修改。
+  // 自定义 ws 响应事件名。
   vue_emit_name: {
     onopen: 'ws_open',
     onmessage: 'ws_message', // WsBus.$on('ws_message')

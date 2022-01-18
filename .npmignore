@@ -3,6 +3,11 @@ tsconfig.json
 yarn.lock
 .gitignore
 src/
+.czrc
+
+# linter formater
+.eslintignore
+.eslintrc.js
 
 # demo
 example/
