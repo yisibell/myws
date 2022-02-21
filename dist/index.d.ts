@@ -84,8 +84,8 @@ type WsBusEvents = {
 type WsBusEmitter = Emitter<WsBusEvents>
 
 interface CreateWebSocketReturns {
-  WS: WebSocket
   WsBus: WsBusEmitter
+  WS?: WebSocket
 }
 
 declare const wsInstaller: {

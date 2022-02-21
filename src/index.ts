@@ -83,6 +83,8 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
     return { WS, WsBus }
   }
+
+  return { WsBus }
 }
 
 // ws 安装函数
