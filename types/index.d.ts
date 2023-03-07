@@ -1,13 +1,13 @@
-import { VueConstructor } from 'vue'
-import Options from '../src/interface/options'
-import { CreateWebSocketReturns } from '../src/interface'
+import type { VueConstructor } from 'vue'
+import type Options from '../src/interface/options'
+import type { CreateWebSocketReturns } from '../src/interface'
 
 declare const wsInstaller: {
   install: (Vue: VueConstructor, options: Options) => void
 }
 
-declare function createWebSocket(
-  options: Options
-): CreateWebSocketReturns | undefined
+declare function initMyws(options: Options): CreateWebSocketReturns
 
-export { wsInstaller, createWebSocket }
+declare function createWebSocket(options: Options): CreateWebSocketReturns
+
+export { wsInstaller, createWebSocket, initMyws }

@@ -20,7 +20,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
   // create emitter instance
   const WsBus = mitt()
 
-  let timer: any = null
+  let heartTimer: any = null
   let isOpenWs: string | number | boolean = true
 
   try {
@@ -38,11 +38,13 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
       WsBus.emit(emitNameMap.onopen, e)
 
+      options.onopen && options.onopen(e)
+
       WS.send('heart')
 
-      clearInterval(timer)
+      clearInterval(heartTimer)
 
-      timer = setInterval(
+      heartTimer = setInterval(
         () => {
           WS.send('heart')
         },
@@ -50,8 +52,6 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
           ? Number.parseInt(heart_interval)
           : heart_interval
       )
-
-      options.onopen && options.onopen(e)
     }
 
     WS.onmessage = function (e) {
@@ -63,7 +63,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
     WS.onerror = function (e) {
       console.log('ws error!')
       WsBus.emit(emitNameMap.onerror, e)
-      clearInterval(timer)
+      clearInterval(heartTimer)
       options.onerror && options.onerror(e)
     }
 
@@ -71,7 +71,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
       console.log('ws closed!')
       emitWsReconnect(WsBus, e)
       WsBus.emit(emitNameMap.onclose, e)
-      clearInterval(timer)
+      clearInterval(heartTimer)
       options.onclose && options.onclose(e)
     }
 

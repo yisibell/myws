@@ -7,6 +7,10 @@ import type { CreateWebSocketReturns } from './interface'
 // ws 重连计数
 export let WS_CONNECT_COUNT = 0
 
+const setWsConnectCount = (count = 0) => {
+  WS_CONNECT_COUNT = count
+}
+
 const initMyws = (
   options: Options,
   initCallback: (ws: CreateWebSocketReturns) => void
@@ -24,7 +28,7 @@ const initMyws = (
   const { reconnect_limit = 30, reconnect_limit_msg, reconnect_msg } = options
 
   WsBus.on(options.ws_bus_emit_names.onopen, () => {
-    WS_CONNECT_COUNT = 0
+    setWsConnectCount(0)
   })
 
   WsBus.on(WS_RECONNECT_EMIT_NAME, () => {
