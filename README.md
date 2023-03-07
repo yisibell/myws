@@ -67,10 +67,10 @@ Vue.use(wsInstaller, {
   // 每次尝试重连 ws 时的提示文本, 也可以是一个函数，该函数会被传入当前的重连计数。
   reconnect_msg: '',
 
-  // 自定义在响应 ws 消息时，WsBus 的 emit 事件名
+  // 自定义在响应 ws 消息时，WsBus 的 emit 事件名。
   ws_bus_emit_names: {
     onopen: 'ws_open',
-    onmessage: 'ws_message', // WsBus.on('ws_message')
+    onmessage: 'ws_message', // WsBus.on('ws_message', () => {})
     onerror: 'ws_error',
     onclose: 'ws_close'
   },
