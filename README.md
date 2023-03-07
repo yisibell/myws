@@ -32,9 +32,21 @@ $ npm i myws
 
 # Usage
 
+## Manual initialization
+
+```ts
+import { initMyws } from 'myws'
+
+let $ws;
+
+initMyws({}, (wsInstance) => {
+  $ws = wsInstance
+})
+```
+
 ## In Vue projects
 
-在 `vue` 项目中使用 `WebSocket` 客户端服务。
+对于 在 `vue` 项目中使用 `WebSocket` 客户端服务，`myws` 做了特殊支持。你可以将 `myws` 作为 **Vue plugin** 进行使用。
 
 为了规范化，请在你的项目中创建 `src/service/ws.js` 文件，该文件中用于存放该项目的 `WebSocket` 服务逻辑。
 
