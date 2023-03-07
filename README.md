@@ -14,6 +14,12 @@
 
 A tiny websocket client library.
 
+# Features
+
+- Automatically reconnect when websocket fails.
+- Support event subscription mode, receive messages by listening to events.
+- Support **Typescript**.
+
 # Installation
 
 ```bash
@@ -26,7 +32,7 @@ $ npm i myws
 
 # Usage
 
-## Vue
+## In Vue projects
 
 在 `vue` 项目中使用 `WebSocket` 客户端服务。
 
@@ -123,3 +129,7 @@ import '@/service/ws'
   }
 </script>
 ```
+
+# CHANGE LOG
+
+SEE <a href="./CHANGELOG.md">CHANGE LOG</a>.

@@ -91,8 +91,8 @@ declare const wsInstaller: {
   install: (Vue: VueConstructor, options: Options) => void
 }
 
-declare function createWebSocket(
-  options: Options
-): CreateWebSocketReturns | undefined
+declare function initMyws(options: Options): CreateWebSocketReturns
 
-export { createWebSocket, wsInstaller };
+declare function createWebSocket(options: Options): CreateWebSocketReturns
+
+export { createWebSocket, initMyws, wsInstaller };
