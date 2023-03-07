@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v2.1.2
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.1.1...v2.1.2)
+
+
+### 🏡 Chore
+
+  - **docs:** Update readme ([6edaa54](https://github.com/yisibell/myws/commit/6edaa54))
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.1.1
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.1.0...v2.1.1)
