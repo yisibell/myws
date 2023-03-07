@@ -1,8 +1,8 @@
 export interface EmitNameMap {
-  onopen: string
-  onmessage: string
-  onerror: string
-  onclose: string
+  onopen: any
+  onmessage: any
+  onerror: any
+  onclose: any
 }
 
 interface Options {
@@ -42,10 +42,9 @@ interface Options {
   reconnect_msg?: string | ((wsConnectCount: number) => string)
 
   /**
-   * 在响应 ws 消息时，向 vue 实例注入的 $emit 事件名，
-   * 一旦修改，则 4 个名称都需要修改。
+   * 自定义在响应 ws 消息时，WsBus 的 emit 事件名
    */
-  vue_emit_name?: EmitNameMap
+  ws_bus_emit_names?: EmitNameMap
 
   /**
    * 接收 message 时回调

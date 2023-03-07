@@ -1,10 +1,22 @@
+
+<p align="center">
+  <a href="https://www.npmjs.org/package/myws">
+    <img src="https://img.shields.io/npm/v/myws.svg">
+  </a>
+  <a href="https://npmcharts.com/compare/myws?minimal=true">
+    <img src="https://img.shields.io/npm/dm/myws.svg">
+  </a>
+  <br>
+</p>
+
+
 # myws
 
 A tiny websocket client library.
 
 # Installation
 
-```zsh
+```bash
 # yarn
 $ yarn add myws
 
@@ -55,8 +67,8 @@ Vue.use(wsInstaller, {
   // 每次尝试重连 ws 时的提示文本, 也可以是一个函数，该函数会被传入当前的重连计数。
   reconnect_msg: '',
 
-  // 自定义 ws 响应事件名。
-  vue_emit_name: {
+  // 自定义在响应 ws 消息时，WsBus 的 emit 事件名
+  ws_bus_emit_names: {
     onopen: 'ws_open',
     onmessage: 'ws_message', // WsBus.on('ws_message')
     onerror: 'ws_error',
@@ -100,7 +112,9 @@ import '@/service/ws'
     mounted() {
       const { WsBus, WS } = this.$ws
       // 当前 WebSocket 实例
+      // TIPS: 如果连接失败或者未开启，WS 将会是 undefined
       console.log(WS)
+
       WsBus.on('ws_message', (data) => {
         // 请保证后端发送的是 JSON 格式的数据，因为我们会在方法内部通过 `JSON.parse` 方法解析它。
         console.log(data)

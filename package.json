@@ -1,14 +1,18 @@
 {
   "name": "myws",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "A tiny websocket client library.",
   "main": "dist/myws.cjs.js",
   "module": "dist/myws.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "types"
+  ],
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "release": "npm publish --access=public"
+    "release": "npm run build && changelogen --release && npm publish --access=public && git push --follow-tags"
   },
   "keywords": [
     "vue",
@@ -32,6 +36,7 @@
     "@rollup/plugin-typescript": "^8.2.1",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
+    "changelogen": "^0.5.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
@@ -45,7 +50,7 @@
     "vue": "^2.6.14"
   },
   "engines": {
-    "node": ">= 12.x"
+    "node": ">=12.x"
   },
   "dependencies": {
     "mitt": "^3.0.0"
