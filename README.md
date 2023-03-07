@@ -69,7 +69,7 @@ Vue.use(wsInstaller, {
 
   // 自定义在响应 ws 消息时，WsBus 的 emit 事件名。
   ws_bus_emit_names: {
-    onopen: 'ws_open',
+    onopen: 'ws_open', // WsBus.on('ws_open', () => {})
     onmessage: 'ws_message', // WsBus.on('ws_message', () => {})
     onerror: 'ws_error',
     onclose: 'ws_close'
