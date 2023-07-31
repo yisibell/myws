@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.2.0
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.1.2...v2.2.0)
+
+### 🚀 Enhancements
+
+- Refactor rollup to v3 ([2c38f7b](https://github.com/yisibell/myws/commit/2c38f7b))
+
+### ❤️  Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.1.2
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.1.1...v2.1.2)
