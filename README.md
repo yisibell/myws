@@ -14,6 +14,8 @@
 
 A tiny websocket client library.
 
+- [Release Notes](./CHANGELOG.md).
+
 # Features
 
 - Automatically reconnect when websocket fails.
@@ -142,6 +144,4 @@ import '@/service/ws'
 </script>
 ```
 
-# CHANGE LOG
 
-SEE <a href="./CHANGELOG.md">CHANGE LOG</a>.
