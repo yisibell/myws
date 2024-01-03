@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.3.0
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.2.0...v2.3.0)
+
+### 🚀 Enhancements
+
+- Upgrade all dependencies to latest version ([409b3c5](https://github.com/yisibell/myws/commit/409b3c5))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.2.0
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.1.2...v2.2.0)
