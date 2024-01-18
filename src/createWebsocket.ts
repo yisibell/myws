@@ -50,7 +50,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
         },
         typeof heart_interval === 'string'
           ? Number.parseInt(heart_interval)
-          : heart_interval
+          : heart_interval,
       )
     }
 

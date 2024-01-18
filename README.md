@@ -39,7 +39,7 @@ $ npm i myws
 ```ts
 import { initMyws } from 'myws'
 
-let $ws;
+export let $ws;
 
 initMyws({}, (wsInstance) => {
   $ws = wsInstance

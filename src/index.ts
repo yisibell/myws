@@ -13,11 +13,11 @@ const setWsConnectCount = (count = 0) => {
 
 const initMyws = (
   options: Options,
-  initCallback: (ws: CreateWebSocketReturns) => void
+  initCallback: (ws: CreateWebSocketReturns) => void,
 ) => {
   options.ws_bus_emit_names = Object.assign(
     defaultEmitNameMap(),
-    options.ws_bus_emit_names
+    options.ws_bus_emit_names,
   )
 
   const $ws = createWebSocket(options)

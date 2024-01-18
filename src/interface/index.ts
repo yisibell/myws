@@ -17,5 +17,5 @@ export interface CreateWebSocketReturns {
 }
 
 export type CreateWebSocket = (
-  options: Options
+  options: Options,
 ) => CreateWebSocketReturns | undefined
