@@ -26,6 +26,8 @@ interface Options {
    */
   heart_interval?: number
 
+  heart_data?: <T = any>() => T
+
   /**
    * ws 重连间隔，毫秒数，默认 3000。
    */

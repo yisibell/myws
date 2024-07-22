@@ -20,7 +20,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
   // create emitter instance
   const WsBus = mitt()
 
-  let heartTimer: any = null
+  let heartTimer: number = 0
   let isOpenWs: string | number | boolean = true
 
   try {
@@ -40,18 +40,15 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
       options.onopen && options.onopen(e)
 
-      WS.send('heart')
+      const heartData = options.heart_data ? options.heart_data() : 'heart'
+
+      WS.send(heartData)
 
       clearInterval(heartTimer)
 
-      heartTimer = setInterval(
-        () => {
-          WS.send('heart')
-        },
-        typeof heart_interval === 'string'
-          ? Number.parseInt(heart_interval)
-          : heart_interval,
-      )
+      heartTimer = setInterval(() => {
+        WS.send(heartData)
+      }, +heart_interval)
     }
 
     WS.onmessage = function (e) {
