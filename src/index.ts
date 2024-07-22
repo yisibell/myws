@@ -1,4 +1,4 @@
-import type Options from './interface/options'
+import type { Options } from './interface/options'
 import type { VueConstructor } from 'vue'
 import { createWebSocket, WS_RECONNECT_EMIT_NAME } from './createWebsocket'
 import defaultEmitNameMap from './defaultEmitNameMap'
@@ -13,7 +13,7 @@ const setWsConnectCount = (count = 0) => {
 
 const initMyws = (
   options: Options,
-  initCallback: (ws: CreateWebSocketReturns) => void,
+  initCallback?: (ws: CreateWebSocketReturns) => void,
 ) => {
   options.ws_bus_emit_names = Object.assign(
     defaultEmitNameMap(),
@@ -58,7 +58,7 @@ const initMyws = (
     }, options.reconnect_interval || 3000)
   })
 
-  initCallback($ws)
+  initCallback && initCallback($ws)
 
   return $ws
 }

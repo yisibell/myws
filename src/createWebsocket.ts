@@ -1,7 +1,7 @@
 import type { CreateWebSocket, WsBusEmitter } from './interface'
 import mitt from 'mitt'
 import defaultEmitNameMap from './defaultEmitNameMap'
-import type Options from './interface/options'
+import type { Options } from './interface/options'
 
 // ws 重连事件名
 export const WS_RECONNECT_EMIT_NAME = 'ws_reconnect'

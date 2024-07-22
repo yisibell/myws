@@ -1,3 +1,5 @@
+'use strict';
+
 function mitt(n){return {all:n=n||new Map,on:function(t,e){var i=n.get(t);i?i.push(e):n.set(t,[e]);},off:function(t,e){var i=n.get(t);i&&(e?i.splice(i.indexOf(e)>>>0,1):n.set(t,[]));},emit:function(t,e){var i=n.get(t);i&&i.slice().map(function(n){n(e);}),(i=n.get("*"))&&i.slice().map(function(n){n(t,e);});}}}
 
 var defaultEmitNameMap = function () { return ({
@@ -60,10 +62,10 @@ var createWebSocket = function (options) {
     return { WsBus: WsBus };
 };
 
-var WS_CONNECT_COUNT = 0;
+exports.WS_CONNECT_COUNT = 0;
 var setWsConnectCount = function (count) {
     if (count === void 0) { count = 0; }
-    WS_CONNECT_COUNT = count;
+    exports.WS_CONNECT_COUNT = count;
 };
 var initMyws = function (options, initCallback) {
     options.ws_bus_emit_names = Object.assign(defaultEmitNameMap(), options.ws_bus_emit_names);
@@ -76,17 +78,17 @@ var initMyws = function (options, initCallback) {
         setWsConnectCount(0);
     });
     WsBus.on(WS_RECONNECT_EMIT_NAME, function () {
-        if (WS_CONNECT_COUNT > reconnect_limit) {
+        if (exports.WS_CONNECT_COUNT > reconnect_limit) {
             var msg = reconnect_limit_msg ||
                 "The number of ws reconnections has exceeded ".concat(reconnect_limit, "\uFF0Cyou can refresh to reconnect the ws server!");
             console.warn(msg);
             return;
         }
         setTimeout(function () {
-            ++WS_CONNECT_COUNT;
-            var msg = "ws reconnect the ".concat(WS_CONNECT_COUNT, "th time ...");
+            ++exports.WS_CONNECT_COUNT;
+            var msg = "ws reconnect the ".concat(exports.WS_CONNECT_COUNT, "th time ...");
             if (typeof reconnect_msg === 'function') {
-                msg = reconnect_msg(WS_CONNECT_COUNT);
+                msg = reconnect_msg(exports.WS_CONNECT_COUNT);
             }
             else if (reconnect_msg) {
                 msg = reconnect_msg;
@@ -108,4 +110,6 @@ var wsInstaller = {
     install: install,
 };
 
-export { WS_CONNECT_COUNT, createWebSocket, initMyws, wsInstaller };
+exports.createWebSocket = createWebSocket;
+exports.initMyws = initMyws;
+exports.wsInstaller = wsInstaller;

@@ -3,13 +3,13 @@
   "version": "2.5.0",
   "description": "A tiny websocket client library.",
   "type": "module",
-  "main": "dist/myws.cjs.js",
+  "main": "dist/myws.cjs",
   "module": "dist/myws.esm.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/myws.esm.js",
-      "require": "./dist/myws.cjs.js",
+      "require": "./dist/myws.cjs",
       "types": "./dist/index.d.ts"
     }
   },

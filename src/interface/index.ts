@@ -1,5 +1,5 @@
-import Options from './options'
-import { Emitter } from 'mitt'
+import type { Options } from './options'
+import type { Emitter } from 'mitt'
 
 export type WsBusEvents = {
   ws_open?: any

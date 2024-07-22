@@ -29,6 +29,8 @@ interface Options {
    */
   heart_interval?: number
 
+  heart_data?: () => any
+
   /**
    * ws 重连间隔，毫秒数，默认 3000。
    */
@@ -100,4 +102,4 @@ declare function initMyws(options: Options): CreateWebSocketReturns
 
 declare function createWebSocket(options: Options): CreateWebSocketReturns
 
-export { createWebSocket, initMyws, wsInstaller };
+export { type CreateWebSocketReturns, createWebSocket, initMyws, wsInstaller };

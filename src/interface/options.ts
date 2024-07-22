@@ -5,7 +5,7 @@ export interface EmitNameMap {
   onclose: any
 }
 
-interface Options {
+export interface Options {
   /**
    * 是否开启 ws
    */
@@ -26,7 +26,7 @@ interface Options {
    */
   heart_interval?: number
 
-  heart_data?: <T = any>() => T
+  heart_data?: () => any
 
   /**
    * ws 重连间隔，毫秒数，默认 3000。
@@ -75,5 +75,3 @@ interface Options {
    */
   onclose?: (e: Event) => void
 }
-
-export default Options
