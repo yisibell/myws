@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v2.5.1
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.5.0...v2.5.1)
+
+### 🩹 Fixes
+
+- Mitt ([5461aaf](https://github.com/yisibell/myws/commit/5461aaf))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.5.0
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.4.0...v2.5.0)

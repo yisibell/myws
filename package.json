@@ -1,6 +1,6 @@
 {
   "name": "myws",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "description": "A tiny websocket client library.",
   "type": "module",
   "main": "dist/myws.cjs",
