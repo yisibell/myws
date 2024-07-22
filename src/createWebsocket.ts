@@ -31,7 +31,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
   }
 
   if (isOpenWs && api) {
-    const WS = new WebSocket(api)
+    const WS = new WebSocket(api, options.protocols)
 
     WS.onopen = function (e) {
       console.log('ws connected...')

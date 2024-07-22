@@ -17,6 +17,11 @@ interface Options {
   api?: string
 
   /**
+   * 一个协议字符串或者一个包含协议字符串的数组。
+   */
+  protocols?: string | string[]
+
+  /**
    * ws 心跳间隔，毫秒数，默认 50000。
    */
   heart_interval?: number
