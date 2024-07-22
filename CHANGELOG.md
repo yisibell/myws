@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.4.0
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.3.0...v2.4.0)
+
+### 🚀 Enhancements
+
+- Add webSocket protocols ([5d56105](https://github.com/yisibell/myws/commit/5d56105))
+
+### 🏡 Chore
+
+- Update code style ([6ce3ad4](https://github.com/yisibell/myws/commit/6ce3ad4))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.3.0
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.2.0...v2.3.0)
