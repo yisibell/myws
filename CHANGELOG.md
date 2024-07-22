@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v2.5.0
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.4.0...v2.5.0)
+
+### 🚀 Enhancements
+
+- Add heart_data support ([a75d92b](https://github.com/yisibell/myws/commit/a75d92b))
+
+### 🏡 Chore
+
+- Sync dist ([a8fb50e](https://github.com/yisibell/myws/commit/a8fb50e))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.4.0
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.3.0...v2.4.0)
