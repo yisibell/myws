@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v2.6.0
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.5.3...v2.6.0)
+
+### 🚀 Enhancements
+
+- Add WebSocket connected status ([9d80245](https://github.com/yisibell/myws/commit/9d80245))
+
+### 🏡 Chore
+
+- **docs:** Update readme ([33c1a78](https://github.com/yisibell/myws/commit/33c1a78))
+- **docs:** Update readme ([092c1e9](https://github.com/yisibell/myws/commit/092c1e9))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.5.3
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.5.2...v2.5.3)
