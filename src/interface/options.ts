@@ -14,7 +14,7 @@ export interface Options {
   /**
    * ws 服务地址，必需。
    */
-  api?: string
+  api: string
 
   /**
    * 一个协议字符串或者一个包含协议字符串的数组。
@@ -26,6 +26,9 @@ export interface Options {
    */
   heart_interval?: number
 
+  /**
+   * ws 心跳时传递的参数
+   */
   heart_data?: () => any
 
   /**

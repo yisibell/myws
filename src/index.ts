@@ -64,7 +64,7 @@ const initMyws = (
 }
 
 // ws 安装函数
-const install = (Vue: VueConstructor, options: Options = {}) => {
+const install = (Vue: VueConstructor, options: Options) => {
   initMyws(options, (wsInstance) => {
     Vue.prototype.$ws = wsInstance
   })
