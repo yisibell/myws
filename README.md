@@ -49,7 +49,7 @@ let mywsInstance = initMyws({
 
 # In Vue2
 
-> **TIPS**: 改使用方式不再推荐使用，请使用 `initMyws` 替代。
+> **TIPS**: 该方式已不再推荐使用，请使用 `initMyws` 替代。
 
 ``` ts
 import Vue from 'vue'
@@ -64,7 +64,7 @@ Vue.use(wsInstaller, {
 
 # Ws Instance 
 
-初始化 `webSocket` 后，会返回一个 `wsInstance` 示例对象。该对象包含两个属性，分别是 `WS` 和 `WsBus`。
+初始化 `WebSocket` 后，会返回一个 `wsInstance` 示例对象。该对象包含两个属性，分别是 `WS` 和 `WsBus`。
 
 1. `WS` 即，`new WebSocket()` 返回的示例对象。
 2. `WsBus` 则是一个事件总线，由 `mitt` 实例化而来，你可以使用它监听 `WebSocket` 的消息。
