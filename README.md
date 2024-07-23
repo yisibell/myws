@@ -25,6 +25,9 @@ A tiny websocket client library.
 # Installation
 
 ```bash
+# pnpm
+$ pnpm add myws
+
 # yarn
 $ yarn add myws
 
@@ -64,10 +67,11 @@ Vue.use(wsInstaller, {
 
 # Ws Instance 
 
-初始化 `WebSocket` 后，会返回一个 `wsInstance` 示例对象。该对象包含两个属性，分别是 `WS` 和 `WsBus`。
+初始化 `WebSocket` 后，会返回一个 `wsInstance` 示例对象。该对象包含以下几个属性。
 
-1. `WS` 即，`new WebSocket()` 返回的示例对象。
-2. `WsBus` 则是一个事件总线，由 `mitt` 实例化而来，你可以使用它监听 `WebSocket` 的消息。
+1. `WS` : 即，`new WebSocket()` 返回的示例对象。
+2. `WsBus` : 则是一个事件总线，由 `mitt` 实例化而来，你可以使用它监听 `WebSocket` 的消息。
+3. `connected` : (`boolean`) 表示 `WebSocket` 是否已完成连接。
 
 
 # Options

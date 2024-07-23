@@ -12,8 +12,9 @@ export type WsBusEvents = {
 export type WsBusEmitter = Emitter<WsBusEvents>
 
 export interface CreateWebSocketReturns {
-  WsBus: WsBusEmitter
   WS?: WebSocket
+  WsBus: WsBusEmitter
+  connected: boolean
 }
 
 export type CreateWebSocket = (

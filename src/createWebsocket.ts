@@ -20,6 +20,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
   // create emitter instance
   const WsBus = mitt()
 
+  let connected = false
   let heartTimer: number = 0
   let isOpenWs: string | number | boolean = true
 
@@ -35,6 +36,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
     WS.onopen = function (e) {
       console.log('ws connected...')
+      connected = true
 
       WsBus.emit(emitNameMap.onopen, e)
 
@@ -59,6 +61,7 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
     WS.onerror = function (e) {
       console.log('ws error!')
+      connected = false
       WsBus.emit(emitNameMap.onerror, e)
       clearInterval(heartTimer)
       options.onerror && options.onerror(e)
@@ -66,16 +69,18 @@ const createWebSocket: CreateWebSocket = (options: Options) => {
 
     WS.onclose = function (e) {
       console.log('ws closed!')
+      connected = false
+
       emitWsReconnect(WsBus, e)
       WsBus.emit(emitNameMap.onclose, e)
       clearInterval(heartTimer)
       options.onclose && options.onclose(e)
     }
 
-    return { WS, WsBus }
+    return { WS, WsBus, connected }
   }
 
-  return { WsBus }
+  return { WsBus, connected }
 }
 
 export { createWebSocket }
