@@ -37,14 +37,19 @@ $ npm i myws
 ``` ts
 import { initMyws } from 'myws'
 
-const mywsInstance = initMyws({
+let mywsInstance = initMyws({
   open: ture,
   api: 'wss://server/some/path',
   // ...
+}, (wsInstance) => {
+  // 想要自动重连功能有效的话，你需要使用该回调函数对 ws 示例对象进行赋值更新。
+  mywsInstance = wsInstance
 })
 ```
 
 # In Vue2
+
+> **TIPS**: 改使用方式不再推荐使用，请使用 `initMyws` 替代。
 
 ``` ts
 import Vue from 'vue'
@@ -56,6 +61,14 @@ Vue.use(wsInstaller, {
   // ...
 })
 ```
+
+# Ws Instance 
+
+初始化 `webSocket` 后，会返回一个 `wsInstance` 示例对象。该对象包含两个属性，分别是 `WS` 和 `WsBus`。
+
+1. `WS` 即，`new WebSocket()` 返回的示例对象。
+2. `WsBus` 则是一个事件总线，由 `mitt` 实例化而来，你可以使用它监听 `WebSocket` 的消息。
+
 
 # Options
 
@@ -75,10 +88,5 @@ Vue.use(wsInstaller, {
 | `onopen` |  `(e: Event) => void` | - | WebSocket 连接时回调。|
 | `onerror` |  `(e: Event) => void` | - | WebSocket 出错时回调。|
 | `onclose` |  `(e: Event) => void` | - | WebSocket 关闭时回调。|
-
-
-# CHANGE LOGS
-
-see [change logs](./CHANGELOG.md) here.
 
 
