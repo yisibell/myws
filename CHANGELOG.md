@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v2.5.3
+
+[compare changes](https://github.com/yisibell/myws/compare/v2.5.2...v2.5.3)
+
+### 🩹 Fixes
+
+- InitMyws types ([4dd0c3f](https://github.com/yisibell/myws/commit/4dd0c3f))
+
+### 🏡 Chore
+
+- Remove dist ([238ab57](https://github.com/yisibell/myws/commit/238ab57))
+- Ignore dist dir ([6506607](https://github.com/yisibell/myws/commit/6506607))
+
+### ❤️ Contributors
+
+- Wenqing <wenqing@kerrylan.com>
+
 ## v2.5.2
 
 [compare changes](https://github.com/yisibell/myws/compare/v2.5.1...v2.5.2)
