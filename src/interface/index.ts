@@ -19,3 +19,8 @@ export interface CreateWebSocketReturns {
 export type CreateWebSocket = (
   options: Options,
 ) => CreateWebSocketReturns | undefined
+
+export type InitMywsFunction = (
+  opts: Options,
+  cb?: (wsInstance: CreateWebSocketReturns) => void,
+) => CreateWebSocketReturns | undefined

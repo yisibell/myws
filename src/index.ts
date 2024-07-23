@@ -2,7 +2,7 @@ import type { Options } from './interface/options'
 import type { VueConstructor } from 'vue'
 import { createWebSocket, WS_RECONNECT_EMIT_NAME } from './createWebsocket'
 import defaultEmitNameMap from './defaultEmitNameMap'
-import type { CreateWebSocketReturns } from './interface'
+import type { InitMywsFunction } from './interface'
 
 // ws 重连计数
 export let WS_CONNECT_COUNT = 0
@@ -11,10 +11,7 @@ const setWsConnectCount = (count = 0) => {
   WS_CONNECT_COUNT = count
 }
 
-const initMyws = (
-  options: Options,
-  initCallback?: (ws: CreateWebSocketReturns) => void,
-) => {
+const initMyws: InitMywsFunction = (options, initCallback) => {
   options.ws_bus_emit_names = Object.assign(
     defaultEmitNameMap(),
     options.ws_bus_emit_names,
